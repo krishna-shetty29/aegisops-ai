@@ -1,0 +1,326 @@
+:root {
+  font-family: Inter, system-ui, sans-serif;
+  color: #e5edf8;
+  background: #0b1220;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  background: #0b1220;
+}
+
+button {
+  font: inherit;
+  cursor: pointer;
+}
+
+.app-shell {
+  display: flex;
+  min-height: 100vh;
+}
+
+.sidebar {
+  width: 250px;
+  padding: 24px 16px;
+  background: #101a2d;
+  border-right: 1px solid #26334b;
+  display: flex;
+  flex-direction: column;
+}
+
+.brand {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  margin-bottom: 38px;
+}
+
+.brand-mark {
+  display: grid;
+  place-items: center;
+  width: 42px;
+  height: 42px;
+  border-radius: 12px;
+  font-weight: 800;
+  color: #07101d;
+  background: linear-gradient(135deg, #57d6ff, #8b5cf6);
+}
+
+.brand h1,
+.brand p {
+  margin: 0;
+}
+
+.brand h1 {
+  font-size: 15px;
+}
+
+.brand p,
+.topbar p {
+  color: #8ea1bf;
+  font-size: 12px;
+}
+
+nav {
+  display: grid;
+  gap: 8px;
+}
+
+.nav-item {
+  width: 100%;
+  padding: 12px;
+  border: 0;
+  border-radius: 8px;
+  text-align: left;
+  color: #b5c3d9;
+  background: transparent;
+}
+
+.nav-item:hover,
+.nav-item.active {
+  color: white;
+  background: #1a2a45;
+}
+
+.sidebar-status {
+  margin-top: auto;
+  color: #b5c3d9;
+  font-size: 13px;
+}
+
+.status-dot {
+  display: inline-block;
+  width: 9px;
+  height: 9px;
+  margin-right: 7px;
+  border-radius: 50%;
+}
+
+.green {
+  background: #35d07f;
+}
+
+.red {
+  background: #ef5c68;
+}
+
+.dashboard {
+  flex: 1;
+  max-width: 1500px;
+  padding: 36px;
+}
+
+.topbar,
+.panel-heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+}
+
+.topbar {
+  margin-bottom: 24px;
+}
+
+.topbar p {
+  margin: 0;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+}
+
+.page-header {
+  margin-bottom: 22px;
+}
+
+.page-header h2 {
+  margin: 0 0 6px;
+  font-size: 30px;
+}
+
+.page-header p {
+  margin: 0;
+  color: #8ea1bf;
+}
+
+.refresh-button {
+  padding: 10px 16px;
+  border: 0;
+  border-radius: 8px;
+  color: white;
+  background: #4c80ff;
+}
+
+.summary-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 18px;
+  margin-bottom: 18px;
+}
+
+.metric-card,
+.panel {
+  border: 1px solid #26334b;
+  border-radius: 12px;
+  background: #111c30;
+}
+
+.metric-card {
+  padding: 20px;
+}
+
+.metric-card p {
+  margin: 0 0 12px;
+  color: #8ea1bf;
+}
+
+.metric-card strong {
+  font-size: 27px;
+}
+
+.success-text {
+  color: #44d68c;
+}
+
+.failed-text {
+  color: #f0727d;
+}
+
+.panel {
+  padding: 22px;
+  margin-bottom: 18px;
+  overflow-x: auto;
+}
+
+.panel h3 {
+  margin-top: 0;
+}
+
+.detail-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.detail-card {
+  min-height: 80px;
+  padding: 14px;
+  border-radius: 8px;
+  background: #182640;
+}
+
+.detail-card span {
+  display: block;
+  margin-bottom: 8px;
+  color: #8ea1bf;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.detail-card strong {
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 1.45;
+  overflow-wrap: anywhere;
+}
+
+table {
+  width: 100%;
+  min-width: 650px;
+  border-collapse: collapse;
+}
+
+th,
+td {
+  padding: 14px;
+  border-bottom: 1px solid #26334b;
+  text-align: left;
+  font-size: 14px;
+}
+
+th {
+  color: #8ea1bf;
+  font-size: 12px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+tbody tr:last-child td {
+  border-bottom: 0;
+}
+
+td small {
+  display: block;
+  margin-top: 4px;
+  color: #8ea1bf;
+}
+
+.badge {
+  display: inline-block;
+  padding: 5px 9px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.badge.success {
+  color: #5ce49e;
+  background: #153e31;
+}
+
+.badge.failed {
+  color: #ff8992;
+  background: #482530;
+}
+
+.badge.running {
+  color: #7ab8ff;
+  background: #183b63;
+}
+
+.badge.unknown {
+  color: #b7c3d4;
+  background: #2a3549;
+}
+
+.empty-state,
+.empty-table {
+  color: #9caec8;
+  text-align: center;
+  line-height: 1.5;
+}
+
+.error-message {
+  padding: 14px 16px;
+  margin-bottom: 18px;
+  border: 1px solid #80414b;
+  border-radius: 8px;
+  color: #ffc0c5;
+  background: #3a2029;
+}
+
+@media (max-width: 950px) {
+  .sidebar {
+    width: 76px;
+    padding: 18px 10px;
+  }
+
+  .brand div,
+  .nav-item,
+  .sidebar-status {
+    display: none;
+  }
+
+  .summary-grid,
+  .detail-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .dashboard {
+    padding: 22px;
+  }
+}

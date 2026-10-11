@@ -1,0 +1,28 @@
+# Terraform working directory and downloaded providers
+.terraform/
+
+# Terraform state may contain infrastructure details or sensitive values
+*.tfstate
+*.tfstate.*
+terraform.tfstate.d/
+
+# Local variable values may contain subscription IDs or future secrets
+terraform.tfvars
+*.auto.tfvars
+
+# Saved plans
+*.tfplan
+*.tfplan.*
+
+# Terraform crash logs
+crash.log
+crash.*.log
+
+# Override files
+override.tf
+override.tf.json
+*_override.tf
+*_override.tf.json
+
+# Command-line variable files
+*.tfvars.json

@@ -1,0 +1,33 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: autonomous-ai-backend-validation
+  namespace: autonomous-ai-devops
+spec:
+  backoffLimit: 0
+  ttlSecondsAfterFinished: 300
+  template:
+    metadata:
+      labels:
+        app: autonomous-ai-backend-validation
+    spec:
+      restartPolicy: Never
+      containers:
+        - name: health-check
+          image: curlimages/curl:8.10.1
+          command:
+            - /bin/sh
+            - -c
+          args:
+            - |
+              set -e
+
+              echo "Checking FastAPI health endpoint..."
+              curl --fail --silent --show-error \
+                http://autonomous-ai-backend-service.autonomous-ai-devops.svc.cluster.local:8000/health
+
+              echo "Checking FastAPI API documentation endpoint..."
+              curl --fail --silent --show-error \
+                http://autonomous-ai-backend-service.autonomous-ai-devops.svc.cluster.local:8000/docs
+
+              echo "Deployment validation passed."

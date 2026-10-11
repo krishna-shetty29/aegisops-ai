@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: autonomous-ai-config
+  namespace: autonomous-ai-devops
+data:
+  APP_ENV: "kubernetes"
+  AUTOMATION_ENVIRONMENT: "staging"
+  ALLOW_AUTOMATED_STAGING_FIXES: "false"
+  ALLOW_PRODUCTION_CHANGES: "false"
+  AZURE_DEVOPS_ORGANIZATION: krishnashetty
+  AZURE_DEVOPS_PROJECT: autonomous-ai-devops-engineer
+  PROMETHEUS_URL: "http://monitoring-kube-prometheus-prometheus.monitoring.svc.cluster.local:9090"

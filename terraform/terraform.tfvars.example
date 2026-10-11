@@ -1,0 +1,18 @@
+# Copy this file to terraform.tfvars only when you have
+# an active Azure subscription and need to create Azure resources.
+#
+# Do not commit terraform.tfvars to Git.
+
+resource_group_name = "rg-autonomous-ai-devops-staging"
+location            = "centralindia"
+
+# Keep all cloud resources disabled by default.
+enable_acr        = false
+enable_aks        = false
+enable_monitoring = false
+
+# Future AKS settings
+aks_name        = "aks-autonomous-ai-devops"
+aks_dns_prefix  = "autonomous-ai-devops"
+aks_node_count  = 1
+aks_node_size   = "Standard_B2s"
