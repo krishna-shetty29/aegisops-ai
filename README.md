@@ -265,7 +265,3 @@ Fake local demonstrations are classified as `demo` data and are never mixed with
 - Prometheus and Grafana monitoring.
 - Entra/OIDC sign-in for public or team deployment.
 - Additional approved non-production test incidents for research metrics.
-
-## License
-
-This project is intended for educational, research, and portfolio demonstration purposes.
